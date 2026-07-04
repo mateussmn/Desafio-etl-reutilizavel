@@ -19,8 +19,8 @@ def carregar_dados(df: pd.DataFrame ,format_saida : list):
 
     return
 
-pasta = 'data'
-data_frame = extrair_dados(pasta)
-data_frame_total_calculado = calcular_kpi_total_vendas(data_frame)
-carregar_dados(data_frame_total_calculado, ["csv", "parquet"])
+def pipeline_calculo_kpi(pasta :str, fortmat_saida :list):
+    data_frame = extrair_dados(pasta)
+    data_frame_total_calculado = calcular_kpi_total_vendas(data_frame)
+    carregar_dados(data_frame_total_calculado, ["csv", "parquet"])
 
